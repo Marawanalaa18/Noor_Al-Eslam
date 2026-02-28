@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --font-cairo: "Cairo", sans-serif;
+  --font-tajawal: "Tajawal", sans-serif;
+  --font-amiri: "Amiri", serif;
+
+  --color-primary: #0F3D2E;
+  --color-primary-light: #1A5C47;
+  --color-primary-dark: #0A291F;
+  
+  --color-gold: #C8A951;
+  --color-gold-light: #E0C87A;
+  --color-gold-dark: #A68A3D;
+
+  --color-bg-light: #F8F9FA;
+  --color-bg-dark: #0B1110;
+  --color-surface-light: #FFFFFF;
+  --color-surface-dark: #121A18;
+}
+
+@layer base {
+  body {
+    @apply font-cairo bg-bg-light text-gray-900 dark:bg-bg-dark dark:text-gray-100 transition-colors duration-300 overflow-x-clip;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 dark:bg-black/20 dark:border-white/10;
+  }
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-lg border border-white/40 shadow-xl dark:bg-surface-dark/60 dark:border-white/5;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-gold dark:from-gold-light dark:to-white py-4 leading-normal;
+  }
+}
